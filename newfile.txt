@@ -1,2 +1,2 @@
 New file 
-this will go into branch named test1
+this will go into branch named test2
