@@ -2,4 +2,4 @@ line1/nLine2
 Line3
 Line4
 Line\nLine6\nLine7
-Well learning git is getting exciting ..and I can't stop thanking the authors of Startup-Engineering course
+Well learning GIT is getting exciting ..and I can't stop thanking the authors of Startup-Engineering course
