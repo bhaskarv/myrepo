@@ -71,3 +71,7 @@ Function calling
 Function or tool calling enables AI models to execute predefined functions or tools based on the user's input or specific conditions.
 
 It allows AI models to fetch real-time information, perform calculations, or trigger actions that require external tools or services.
+
+https://docs.spring.io/spring-ai/reference/api/chat/comparison.html
+
+
