@@ -65,4 +65,20 @@
 | **Shared VPC** | Organizational | Connects multiple projects to a centralized network. |
 
 > A Shared VPC is strictly an intra-organization feature.
-    
+
+* Google Cloud networking is built on a Global VPC, where a single private network spans all regions using Google’s private backbone, while subnets remain regional to support zonal isolation and high availability. For large enterprises, Shared VPC centralizes network control in a host project and allows multiple service projects to deploy resources, but it is limited to a single organization; cross-organization connectivity requires VPC Peering, which enables private IP communication but forbids overlapping CIDR ranges, often driving designs toward Private Service Connect or NAT-based solutions. To extend connectivity to on-premises environments, Google Cloud offers Cloud VPN and Cloud Interconnect: Cloud VPN provides encrypted, internet-based tunnels ideal for rapid setup or small workloads, while Cloud Interconnect delivers private, high-bandwidth, low-latency connectivity for enterprise-scale traffic. Dedicated Interconnect is chosen when an organization requires direct physical connections at 10 or 100 Gbps, maximum throughput, and predictable performance from a colocation facility, whereas Partner Interconnect is used when direct colocation is not feasible and flexible bandwidth options are needed via a service provider. For mission-critical hybrid architectures, HA VPN is commonly layered on top of Cloud Interconnect to add encryption and redundancy, combining Interconnect’s performance with VPN’s security to meet strict availability and compliance requirements.
+---
+### PCA Scenario Mapping (Quick Recall)
+
+* **“Enterprise data center, massive throughput, lowest latency”** → Dedicated Interconnect
+* **“No colocation, need private connectivity with flexible speeds”** → Partner Interconnect
+* **“Fast setup, encrypted, low-to-medium traffic”** → Cloud VPN
+* **“Regulatory or security requirement + Interconnect”** → HA VPN over Interconnect
+* **“99.99% hybrid availability requirement”** → Dual Interconnects + HA VPN
+
+---
+
+### One-line memory hook
+
+> **VPN = speed of setup, Interconnect = speed of data, HA VPN + Interconnect = best of both.**
+
